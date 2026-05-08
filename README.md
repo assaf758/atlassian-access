@@ -15,7 +15,7 @@ When you paste a Jira issue key (e.g. `ML-12447`) or a Confluence page URL into 
 ## Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_GITHUB_USER/atlassian-access/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/assaf758/atlassian-access/main/install.sh | bash
 ```
 
 Re-run the same command to update to the latest version.
@@ -23,7 +23,7 @@ Re-run the same command to update to the latest version.
 **For developers:** clone directly into the skills directory:
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USER/atlassian-access.git ~/.claude/skills/atlassian-access
+git clone https://github.com/assaf758/atlassian-access.git ~/.claude/skills/atlassian-access
 ```
 
 ### Requirements
