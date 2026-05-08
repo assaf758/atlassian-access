@@ -30,13 +30,9 @@ ASSIGNEE_W = max(ASSIGNEE_W, 8)
 
 header = f"{'KEY':<{KEY_W}}  {'STATUS':<{STATUS_W}}  {'ASSIGNEE':<{ASSIGNEE_W}}  SUMMARY"
 print(header)
-print('-' * min(len(header) + 20, 120))
+print('-' * len(header))
 
 for issue, status, assignee in zip(issues, statuses, assignees):
     key = issue['key']
     summary = issue['fields'].get('summary', '') or ''
-    # Truncate summary so total line stays readable
-    max_summary = 120 - KEY_W - STATUS_W - ASSIGNEE_W - 6
-    if len(summary) > max_summary:
-        summary = summary[:max_summary - 1] + '…'
     print(f"{key:<{KEY_W}}  {status:<{STATUS_W}}  {assignee:<{ASSIGNEE_W}}  {summary}")

@@ -90,7 +90,7 @@ for k, v in sorted(fields.items()):
 if extras:
     print("\nOther fields:")
     for name, val in extras:
-        print(f"  {name+':':<35} {val[:120]}")
+        print(f"  {name+':':<35} {val}")
 
 # Description
 desc = fields.get('description')
@@ -104,12 +104,12 @@ if desc and desc.get('content'):
 # Comments
 comments = (fields.get('comment') or {}).get('comments', [])
 if comments:
-    print(f"\nComments ({len(comments)} total, last 3):")
-    for c in comments[-3:]:
+    print(f"\nComments ({len(comments)} total):")
+    for c in comments:
         author = (c.get('author') or {}).get('displayName', 'Unknown')
         body_texts = []
         if c.get('body', {}).get('content'):
             for block in c['body']['content']:
                 extract_text(block, body_texts)
                 body_texts.append('\n')
-        print(f"  [{author}]: {''.join(body_texts).strip()[:300]}")
+        print(f"  [{author}]: {''.join(body_texts).strip()}")
